@@ -1,0 +1,1 @@
+function sum = CHSH(Rho,MA,MB)  Joint_P = cell(2,2,2,2);  sum = 0  for x = 1:2    for y = 1:2      for u = 1:2        for v = 1:2          if (x-1)*(y-1) == mod(u+v-1,2)            sum = sum + trace(Rho * kron(MA{u,x},MB{v,y}));          end        end      end    end  end  sum = real(sum)/4;  
